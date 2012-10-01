@@ -1,0 +1,23 @@
+# use glob syntax.
+syntax: glob
+
+# vi swap files, backup, and tmp files
+*.swp
+*.bak
+*~
+tmp/
+
+# Mercurial revert files
+*.orig
+
+# python build files
+*.pyc
+*.egg-info
+build/
+dist/
+
+# pip related files
+pip-log.txt
+
+# VirtualEnv
+.virtualenv
