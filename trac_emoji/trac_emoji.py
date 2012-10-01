@@ -48,6 +48,7 @@ class TracEmoji(Component):
                 src=formatter.href.chrome('/%s%s/%s' %(
                     self.HTDOCS_PREFIX, self.EMOJI_DIR, emoji_image)),
                 alt=emoji,
+                title=emoji,
                 style=self.STYLE)
 
     # ITemplateProvider methods
