@@ -17,7 +17,7 @@ class TracEmoji(Component):
     HTDOCS_PREFIX = 'trac_emoji'
     EMOJI_DIR = '/icons'
     EMOJIS = {}
-    DIM = 20
+    STYLE = 'height: 3ex; margin-bottom: -1ex;'
 
     def __init__(self, *args, **kwargs):
         icons = os.listdir(''.join([self.htdocs_loc, self.EMOJI_DIR]))
@@ -34,7 +34,6 @@ class TracEmoji(Component):
 
     def get_wiki_syntax(self):
         def create_emoji(f, match, fullmatch):
-            print 'Create EMOJI'
             emoji = match
             emoji_image = self._format_emoji(f, emoji)
             return emoji_image
@@ -42,7 +41,6 @@ class TracEmoji(Component):
 
     def _format_emoji(self, formatter, emoji):
         emoji_image = self.EMOJIS.get(emoji)
-        print '-'*10, emoji, emoji_image
         if emoji_image is None:
             return emoji
         else:
@@ -50,8 +48,7 @@ class TracEmoji(Component):
                 src=formatter.href.chrome('/%s%s/%s' %(
                     self.HTDOCS_PREFIX, self.EMOJI_DIR, emoji_image)),
                 alt=emoji,
-                height=self.DIM,
-                width=self.DIM)
+                style=self.STYLE)
 
     # ITemplateProvider methods
     def get_htdocs_loc(self):
