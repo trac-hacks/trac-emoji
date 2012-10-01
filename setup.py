@@ -5,6 +5,7 @@ version='0.1'
 
 setup(
     name='TracEmoji',
+    url='https://github.com/pykler/TracEmoji',
     long_description='Emoji plugin for trac implementing https://github.com/arvida/emoji-cheat-sheet.com',
     author='Hatem Nassrat',
     author_email='hatem@nassrat.ca',
