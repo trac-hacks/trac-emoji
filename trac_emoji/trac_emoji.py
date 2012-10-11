@@ -37,7 +37,7 @@ class TracEmoji(Component):
             emoji = match
             emoji_image = self._format_emoji(f, emoji)
             return emoji_image
-        yield (r"(?P<emoji>:\w+:)", create_emoji)
+        yield (r"(?P<emoji>:[^ ]+:)", create_emoji)
 
     def _format_emoji(self, formatter, emoji):
         emoji_image = self.EMOJIS.get(emoji)
